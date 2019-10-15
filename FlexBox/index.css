@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 /* Canh giữa đều 4 bên
 items sắp xếp theo hàng*/
 .container {
@@ -11,18 +14,21 @@ items sắp xếp theo hàng*/
 .child-1{
     background-color: coral;
     /* giãn theo chiều: .container{flex-direction: row;} */
-    flex-basis: 200px;
+    flex-basis: 100px;
+    flex-grow: 1;
 }
 
 .child-2{
     background-color: darkolivegreen;
     /* giãn theo chiều: .container{flex-direction: row;} */
     flex-basis: 100px;
+    flex-grow: 1;
 }
 
 .child-3{
     background-color: hotpink;
     /* giãn theo chiều: .container{flex-direction: row;} */
-    flex-basis: 200px;
+    flex-basis: 100px;
+    flex-grow: 1;
 }
 
