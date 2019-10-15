@@ -20,9 +20,9 @@ items sắp xếp theo hàng*/
 .child-2{
     background-color: darkolivegreen;
     /* giãn theo chiều: .container{flex-direction: row;} */
-    flex-basis: 100px;
-    /* Giả sử thành phần ở giữa sẽ lấy hết các phần tử trống */
-    flex-grow: 1;
+    flex-basis: 200px;
+    /* Giả sử muốn phần tử giữa sẽ không bị cắt */
+    flex-shrink: 0;
 }
 
 .child-3{
