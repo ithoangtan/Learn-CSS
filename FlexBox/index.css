@@ -15,13 +15,13 @@ items sắp xếp theo hàng*/
     background-color: coral;
     /* giãn theo chiều: .container{flex-direction: row;} */
     flex-basis: 100px;
-    flex-grow: 1;
 }
 
 .child-2{
     background-color: darkolivegreen;
     /* giãn theo chiều: .container{flex-direction: row;} */
     flex-basis: 100px;
+    /* Giả sử thành phần ở giữa sẽ lấy hết các phần tử trống */
     flex-grow: 1;
 }
 
@@ -29,6 +29,5 @@ items sắp xếp theo hàng*/
     background-color: hotpink;
     /* giãn theo chiều: .container{flex-direction: row;} */
     flex-basis: 100px;
-    flex-grow: 1;
 }
 
