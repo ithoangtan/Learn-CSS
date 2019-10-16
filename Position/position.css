@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+}
+
+.box-red {
+    background-color: red;
+}
+
+.box-green{
+    background-color: green;
+    position: relative; /* top, leftm bottom, right */
+    /* Nội dung phần tử này sẽ cách trục y 10px */
+    /* Trục Oxy có tâm O là góc trên bên trái */
+    left: 10px;
+}
+
+.box-blue{
+    background-color: blue;
+}
