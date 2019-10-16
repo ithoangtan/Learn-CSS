@@ -4,6 +4,8 @@ body{
 
 .albumn-song{
     display: flex;
+    padding: 10px 5px;
+    border-bottom: 1px solid rgb(220, 220, 220);
 }
 
 .albumn-cover{
@@ -18,7 +20,7 @@ body{
 
 .albumn-cover .overlay{
     height: 100%;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 70%, rgba(0,0,0,1) 99%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,0.7) 99%);
     color: white;
     display: flex;
     align-items: flex-end;
