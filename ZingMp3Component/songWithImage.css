@@ -1,0 +1,48 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.albumn-song{
+    display: flex;
+    padding: 10px 5px;
+    border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.albumn-cover{
+    width: 96px;
+    height: 96px;
+    /* background-image: url(https://via.placeholder.com/150/FF0000/000000); */
+    background-image: url(https://loremflickr.com/150/240);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.albumn-cover .overlay{
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(0,0,0,0.7) 99%);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    /*box-sizing: boder-box đảm bảo không thay đổi size
+    của div .overlay*/
+    box-sizing: border-box;
+}
+
+.info-song{
+    padding: 0 10px ;
+}
+.info-song > div{
+    padding: 2px 0 ;
+}
+
+.info-song .singer{
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+}
+
+.info-song .view-count{
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+}
