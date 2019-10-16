@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.weekly-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.weekly-item .number{
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.weekly-item .info-song{
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.weekly-item .singer {
+    font-size: 12px;
+    color: rgb(124, 124, 124);
+}
+
+.weekly-item .view-count{
+    font-size: 12px;
+    color: rgb(124, 124, 124);
+}
