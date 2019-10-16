@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,18 @@
     <title>Position in css</title>
     <link rel="stylesheet" href="./position.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="inner-container">
-            <div class="child"></div>
-        </div>
-    </div>
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li class="has-sub-menu"><a href="#">About</a>
+            <ul class="sub-menu">
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Team...</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+    </ul>
 </body>
+
 </html>
