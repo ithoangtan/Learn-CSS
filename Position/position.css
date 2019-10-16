@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu{
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.menu a{
+    padding: 10px 10px;
+    text-decoration: none;
+    /* Thẻ a khi làm menu phải là display: block */
+    display: block; 
+}
+
+.menu a:hover{
+    background-color: khaki;
+}
+
+.has-sub-menu{
+    position: relative;
+}
+
+.sub-menu{
+    display: none;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.has-sub-menu:hover .sub-menu{
+    display: block;
+}

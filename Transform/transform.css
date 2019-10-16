@@ -1,0 +1,13 @@
+.item{
+    width: 200px;
+    height: 200px;
+    background-color: grey;
+}
+
+.item:hover{
+    margin: 50px;
+    transform: translate(50px, 50px, 50px);
+    transform: rotate(45deg);
+    transform: skew(10deg, 10deg);
+    transform: matrix(0.586,0.5,-0.8,0.586,10,10);
+}
