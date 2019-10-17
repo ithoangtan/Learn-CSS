@@ -28,10 +28,6 @@ button:hover {
     -webkit-transform: translate(0, -10px);
 }
 
-button i{
-    transition: all 0.1s ease-in-out;
-}
-
 button:active{
     transform: translate(0px, 15px);
 }
