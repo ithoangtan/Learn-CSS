@@ -1,0 +1,47 @@
+body {
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.switch-button {
+    /* reset attribute */
+    -webkit-appearance: none;
+    appearance: none;
+    /* setup switch button */
+    width: 60px;
+    height: 30px;
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    border: 1px solid gray;
+    position: relative;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.switch-button:checked{
+    background-color: mediumseagreen;
+}
+
+.switch-button::before{
+    content: '';
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.switch-button:checked::before{
+    left: 30px;
+}
+
+.switch-button:focus{
+    outline: none;
+}

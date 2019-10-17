@@ -1,0 +1,28 @@
+/* Mobile first */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    background-color: rgb(111, 190, 111);
+    padding: 50px;
+    border: 1px solid black;
+    margin: 1px;
+    text-align: center;
+}
+
+
+@media(min-width: 600px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .box {
+        flex-grow: 1;
+    }
+}
+/* Desk first */
+/* Thì ngược lại với mobile và chúng ta nên làm mobile first
+vì đây là cách làm phổ biến cho đến thời điểm hiện tại, do
+số người truy cập web bằng di động cao hơn nhiều desktop */
