@@ -1,0 +1,144 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.info-about-me {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.top-title {
+    color: tomato;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    font-weight: 400;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
+
+}
+
+.left-content {
+    width: 40%;
+    margin: 1rem;
+    padding-right: 10px;
+
+}
+
+.left-content img {
+    width: 100%;
+    border-radius: 50%;
+    align-items: center;
+
+}
+
+.right-content {}
+
+.right-content .say-hi {
+    background-color: rgb(255, 97, 97);
+    color: white;
+    padding: 5px 10px;
+    letter-spacing: 1.4px;
+    user-select: none;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.right-content .say-hi::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px;
+    position: absolute;
+    /* border-color: red green blue black; */
+    border-color: transparent;
+    border-top-color: tomato;
+    border-left-color: tomato;
+    top: 100%;
+    left: 0;
+}
+
+.right-content .my-name {
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+
+.right-content .my-name span {
+    font-weight: 600;
+}
+
+.right-content .my-website , .right-content a{
+    font-weight: 400;
+    font-size: 14px;
+    color: dodgerblue;
+    cursor: default;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.right-content .details {
+    display: flex;
+
+}
+
+.right-content .details .labels {
+    font-weight: 600;
+}
+
+.right-content .details .label-info {
+    margin-left: 1rem;
+}
+
+.container-bottom {
+    position: absolute;
+    background-color: tomato;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 100%;
+    left: 0;
+    padding: 5px 0;
+    width: 100%;
+    letter-spacing: 10px;
+    font-size: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container-bottom a{
+    text-decoration: none;
+    color: white;
+    opacity: .9;
+    transition: all 0.2s ease;
+}
+
+.container-bottom a:hover{
+    opacity: 1;
+}
