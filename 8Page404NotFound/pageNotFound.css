@@ -34,14 +34,14 @@ body {
 @media (min-width: 700px) {
     .supper-man img {
         animation: aminationSupperMan 2s linear infinite;
-        width: 200px;
+        width: 150px;
     }
 }
 
 @media (min-width: 1024px) {
     .supper-man img {
         animation: aminationSupperMan 2.5s linear infinite;
-        width: 250px;
+        width: 200px;
     }
 
 }
@@ -50,7 +50,7 @@ body {
 @media (min-width: 1980px) {
     .supper-man img {
         animation: aminationSupperMan 3.5s linear infinite;
-        width: 300px;
+        width: 250px;
 
     }
 }

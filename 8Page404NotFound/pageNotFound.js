@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     body.appendChild(star);
 
-    setInterval(runStar, 50);
+    setInterval(runStar, 40);
     right = Math.floor(Math.random() * screen.width);
     top = Math.floor(Math.random() * screen.height);
     star.style.top = top + "px";
     star.style.backgroundColor = arrayColor[Math.floor(Math.random() * 5)];
     star.style.width = star.style.height =
-      Math.floor(Math.random() * 10) + "px";
+      Math.floor(Math.random() * 15) + "px";
     function runStar() {
       if (right >= screen.width * 5) star.remove();
-      if (screen.width > 1368) right += 150;
-      else if (screen.width > 768) right += 120;
+      if (screen.width > 1368) right += 180;
+      else if (screen.width > 768) right += 140;
       else right += 80;
       star.style.right = right + "px";
     }
