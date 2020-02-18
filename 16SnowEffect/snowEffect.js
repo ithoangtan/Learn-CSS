@@ -21,13 +21,15 @@ document.addEventListener("DOMContentLoaded", function() {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     c.fillStyle = this.color;
-    // c.shadowColor = this.color;
-    // c.shadowBlur = 30;
+    c.shadowColor = this.color;
+    c.shadowBlur = 30;
     c.fill();
     c.closePath();
   };
   Snow.prototype.update = function() {
     this.y += this.velocity.y;
+    this.x += this.velocity.x;
+    if (this.y >= canvas.height - this.radius) this.velocity.y = 0;
     this.draw(c);
   };
 
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
     arraySnow.forEach(function(snow) {
       snow.update(c);
     });
+    if (arraySnow.length > 350) arraySnow.splice(0, 100);
     init();
   }
   animate();
