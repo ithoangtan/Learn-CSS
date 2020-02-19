@@ -1,61 +1,160 @@
 document.addEventListener("DOMContentLoaded", function() {
-  let canvas = document.querySelector("canvas");
-  let c = canvas.getContext("2d");
+  var audio = document.getElementById("audio");
+  audio.play();
+
+  var canvas = document.createElement("canvas");
+  var c = canvas.getContext("2d");
 
   document.body.appendChild(canvas);
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  var Reset, Size, Number, Fill;
+
+  Reset = document.querySelector("#Reset-Config");
+  Size = document.querySelector("#Size");
+  Number = document.querySelector("#Number");
+  Fill = document.querySelector("#Fill");
+
+  const config = {
+    size: 3,
+    number: 20,
+    fill: 0.1
+  };
+
+  const ColorArray = [
+    "#ffffff",
+    "#FF0000",
+    "#33FF33",
+    "#CCFF00",
+    "#FF9900",
+    "#3399FF",
+    "#FF3399",
+    "#CC0066",
+    "#00FF00"
+  ];
+
   document.addEventListener("resize", function() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   });
-
-  function Fierwork() {
-    this.radius = 10;
+  document.addEventListener("click", function() {
+    audio.play();
+  });
+  Size.addEventListener("change", function() {
+    config.size = Size.value;
+  });
+  Number.addEventListener("change", function() {
+    config.number = Number.value;
+  });
+  Fill.addEventListener("change", function() {
+    config.fill = "." + Fill.value;
+  });
+  Reset.addEventListener("click", function() {
+    config.size = 3;
+    config.number = 20;
+    config.fill = 0.1;
+    Size.value = 3;
+    Number.value = 20;
+    Fill.value = 1;
+  });
+  /**FireWork**/
+  function FireWork() {
+    this.radius = config.size;
     this.x = canvas.width / 2;
-    this.y = canvas.height + this.radius;
-    this.color = "#fff";
+    this.y = canvas.height;
+    this.color = ColorArray[Math.floor(Math.random() * ColorArray.length)];
     this.velocity = {
       x: Math.random() * 6 - 3,
       y: Math.random() * 3 + 3
     };
-    this.maxY = (Math.random() * canvas.height) / 4;
+    this.maxY = (Math.random() * canvas.height) / 4 + canvas.height / 10;
     this.life = false;
   }
-  Fierwork.prototype.draw = function(c) {
+
+  FireWork.prototype.draw = function(c) {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     c.fillStyle = this.color;
     c.fill();
     c.closePath();
   };
-
-  Fierwork.prototype.update = function(c) {
-    this.y -= this.velocity.y;
-    this.x += this.velocity.x;
-
-    if (this.y <= this.maxY) this.life = true;
-
-    this.draw(c);
+  FireWork.prototype.maximumY = function() {
+    if (this.y <= this.maxY) {
+      this.life = true;
+      for (let i = 0; i < 10; i++) {
+        SparkArray.push(new Spark(this.x, this.y, this.radius, this.color));
+      }
+    }
+    if (this.x <= 0 || this.x >= canvas.width) {
+      this.life = true;
+      for (let i = 0; i < 10; i++) {
+        SparkArray.push(new Spark(this.x, this.y, this.radius, this.color));
+      }
+    }
   };
 
-  let FierworkArray = [];
+  FireWork.prototype.update = function(c) {
+    this.y -= this.velocity.y;
+    this.x += this.velocity.x;
+    this.maximumY();
+    this.draw(c);
+  };
+  /**end firework**/
+  /**Spark**/
 
+  function Spark(x, y, radius, color) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius / 2;
+    this.color = color;
+    this.velocity = {
+      x: Math.random() * 3 - 1,
+      y: Math.random() * 3 - 1
+    };
+    this.friction = 0.015;
+    this.life = 150;
+  }
+
+  Spark.prototype.draw = function(c) {
+    c.beginPath();
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    c.fillStyle = this.color;
+    c.fill();
+    c.closePath();
+  };
+  Spark.prototype.update = function(c) {
+    this.velocity.y -= this.friction;
+    this.life -= 1;
+    this.y -= this.velocity.y;
+    this.x += this.velocity.x;
+    this.draw(c);
+  };
+  /**end Spark**/
+
+  var FireWorkArray = [];
+  var SparkArray = [];
   function init() {
-    if (FierworkArray.length < 20) FierworkArray.push(new Fierwork());
+    if (FireWorkArray.length < config.number)
+      FireWorkArray.push(new FireWork());
   }
 
   function animate() {
     window.requestAnimationFrame(animate);
-    c.fillStyle = "rgba(0,0,0,0.1)";
+    c.fillStyle = `rgba(0,0,0,${config.fill})`;
     c.fillRect(0, 0, canvas.width, canvas.height);
-    FierworkArray.forEach(function(fw, index) {
+
+    FireWorkArray.forEach(function(fw, index) {
       fw.update(c);
-      if (fw.life) FierworkArray.splice(index, 1);
+      if (fw.life) FireWorkArray.splice(index, 1);
+    });
+    SparkArray.forEach(function(s, index) {
+      if (s.life <= 0) SparkArray.splice(index, 1);
+      s.update(c);
     });
     init();
+    console.log(SparkArray.length);
   }
 
   animate();
