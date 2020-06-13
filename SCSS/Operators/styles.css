@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+}
+
+article[role=main] {
+  float: left;
+  width: 62.5%;
+  background-color: green;
+}
+
+aside[role=complementary] {
+  float: right;
+  width: 31.25%;
+  background-color: red;
+}
+
+/*# sourceMappingURL=styles.css.map */
