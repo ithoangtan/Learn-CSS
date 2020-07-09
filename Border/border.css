@@ -53,8 +53,10 @@
   height: 40px;
   float: left;
   background-color: cyan;
-  border-right: 1px solid black;
 }
-.nav-item:last-child {
-  border-right: 0;
+
+.nav-item:not(:last-child) {
+  /* Tất cả các style khác của .nav-item:las-child 
+    cũng sẽ không có thuộc tính khác*/
+  border-right: 1px solid black;
 }
