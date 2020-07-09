@@ -1,0 +1,60 @@
+.div-border-radius {
+  display: inline-block;
+  background: teal;
+  width: 230px;
+  height: 100px;
+  padding: 40px 10px;
+  box-sizing: border-box;
+  font-family: courier;
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.percent {
+  border-radius: 50%;
+}
+
+.pixel {
+  border-radius: 10px/30px;
+}
+
+.normal {
+  border-radius: 999px;
+}
+
+/* background-image response */
+.wrap-image {
+  margin-top: 50px;
+  border: 1px solid #000;
+}
+
+.image {
+  width: 800px;
+  height: 400px;
+  max-width: 100%;
+  background: url("http://via.placeholder.com/800x400") no-repeat 0 0;
+  background-size: contain;
+}
+
+/* // Thêm đoạn code như thế này vào */
+/* // breakpoint là 500px tương ứng với width của image */
+@media (max-width: 800px) {
+  .image {
+    height: 0;
+    /* (heightImage/widthImage)*100% */
+    padding-bottom: 50%;
+  }
+}
+
+/* :not selector() */
+.nav-item {
+  margin-top: 10px;
+  width: 60px;
+  height: 40px;
+  float: left;
+  background-color: cyan;
+  border-right: 1px solid black;
+}
+.nav-item:last-child {
+  border-right: 0;
+}
