@@ -1,0 +1,45 @@
+.parent {
+   display: flex;
+   height: 400px;
+   background-color: #222;
+}
+
+/*  top -left */
+.child {
+   background-color: red;
+   width: 100px;
+   height: 100px;
+}
+
+/* top - right */
+.child {
+   background-color: red;
+   width: 100px;
+   height: 100px;
+   margin-left: auto;
+}
+
+/* center - center */
+.child {
+   background-color: red;
+   width: 100px;
+   height: 100px;
+   margin: auto;
+}
+
+/* bottom - right */
+.child {
+   background-color: red;
+   width: 100px;
+   height: 100px;
+   margin-top: auto;
+   margin-left: auto;
+}
+
+/* bottom - left */
+.child {
+   background-color: red;
+   width: 100px;
+   height: 100px;
+   margin-top: auto;
+}
